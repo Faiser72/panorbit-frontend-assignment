@@ -1,0 +1,33 @@
+<div class="container-fluid" style="text-align:center;">
+    <!-- Creating a SVG image -->
+    <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+        <path d="M0, 100 C150, 200 350, 
+                    0 500, 100 L500, 00 L0, 0 Z" style="stroke:none; fill:dodgerblue;">
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        </path>
+    </svg>
+
+    <div class="card account-card mx-auto shadow">
+        <div class="card-title">
+            <p class="title">Select an account</p>
+        </div>
+
+        <div class="card-body">
+            <div class="row d-flex justify-content-around mt-2 row-hower" *ngFor="let user of userList; let i = index"
+                (click)="routeToProfile(i)">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="img">
+                        <img src="{{user.profilepicture}}" alt="" class="img"
+                            style="max-width: 5rem; overflow: hidden;">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-8 col-md-8">
+                    <p class="float-left userName pt-3">{{user.name}}</p>
+                </div>
+                <span class="divider">
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
